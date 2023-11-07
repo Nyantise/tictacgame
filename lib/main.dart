@@ -7,6 +7,7 @@ import 'package:tictacgame/states/app.dart';
 void main() async {
   await GetStorage.init();
   runApp(const MyApp());
+  config.loadPlayer1Name();
 }
 
 class MyApp extends StatelessWidget {

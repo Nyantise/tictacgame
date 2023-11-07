@@ -1,9 +1,10 @@
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 RxDouble h = 0.0.obs;
 RxDouble w = 0.0.obs;
-RxString player1 = 'ply1'.obs;
-RxString player2 = 'plae2'.obs;
+RxString player1 = ''.obs;
+RxString player2 = ''.obs;
 
 var config = Config();
 
@@ -24,6 +25,14 @@ class Config extends GetxController {
         player2.value = '';
       }
     }
+  }
+
+  void loadPlayer1Name() {
+    player1.value = GetStorage().read('player1') ?? '';
+  }
+
+  void savePlayer1Name() {
+    GetStorage().write('player1', player1.value);
   }
 
   playerNameCheck() {

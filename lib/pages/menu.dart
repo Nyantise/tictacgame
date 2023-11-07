@@ -73,6 +73,7 @@ List<Widget> menuItems = [
       if (nickError) {
         return;
       }
+      config.savePlayer1Name();
       game.create();
       Get.offAndToNamed('/game');
     },
